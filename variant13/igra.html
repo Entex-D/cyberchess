@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Игра с ИИ / Рандомная расстановка</title>
+    
+<linkl rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+      integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
+      crossorigin="anonymous">
+  
+<link rel="stylesheet" href="style.css">
+  
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+        integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+        crossorigin="anonymous"></script>
+  <script src="https://chessboardjs.com/js/chess-0.10.2.min.js"></script>
+  <base href="https://chessboardjs.com/">
+</head>
+<body>
+<center>
+  <div id="myBoard" style="width: 40%"></div>
+  </center>
+<script>     
+    /**
+     * Генерирует FEN-строку со случайной расстановкой ровно 32 фигур (16 белых и 16 чёрных).
+     * Возвращает корректную FEN-нотацию (только часть, описывающую доску + базовые поля).
+     *
+     * @returns {string} Случайная FEN-нотация
+     */
+    function generateRandomFullSetFEN() {
+      // 1. Определяем набор фигур (белых и чёрных)
+      const whitePieces = ['P','P','P','P','P','P','P','P','R','R','N','N','B','B','Q','K'];
+      const blackPieces = ['p','p','p','p','p','p','p','p','r','r','n','n','b','b','q','k'];
+
+      // Все 32 фигуры в одном массиве
+      const allPieces = [...whitePieces, ...blackPieces];
+
+      // 2. Создаём массив из 64 пустых клеток (null)
+      const squares = Array(64).fill(null);
+
+      // 3. Ставим все 32 фигуры в случайные клетки
+      //    Один из способов — "перемешать" список индексов 0..63 и взять первые 32
+      //    чтобы расставить все фигуры без коллизий.
+      //    Или можно последовательно находить случайную свободную клетку.
+      //    Здесь покажем "перемешивание индексов" как более «чистый» способ.
+
+      // Создаём массив индексов от 0 до 63
+      const indices = Array.from({ length: 64 }, (_, i) => i);
+      // Перемешиваем (shuffle) эти индексы
+      shuffleArray(indices);
+
+      // Перемешанные 32 первых индекса из массива будут позициями для наших фигур
+      const positionsForPieces = indices.slice(0, 32);
+
+      // Расставим фигуры по этим 32 позициям
+      for (let i = 0; i < 32; i++) {
+        squares[positionsForPieces[i]] = allPieces[i];
+      }
+
+      // 4. Преобразуем массив `squares` (64 элемента) в 8 строк по 8 клеток для FEN.
+      //
+      // По правилам FEN:
+      //   - первая строка FEN описывает 8-ю горизонталь сверху (row = 0),
+      //   - последняя строка (в FEN) — это 1-я горизонталь (row = 7).
+      //
+      // Значит, при row=0 мы берём squares[0..7], при row=1 — squares[8..15] и т.д.
+      // (сверху вниз). Но "физически" это будет описывать 8-ю, 7-ю... до 1-й линии
+      // в шахматном смысле.
+      //
+      // Если же вам нужно строго соответствовать тому, как обычно говорится, 
+      // что индекс [0] — это a8 и т. д., то всё корректно: row=0 → 8-я горизонталь.
+
+      let fenRows = [];
+      for (let row = 0; row < 8; row++) {
+        let emptyCount = 0;   // счётчик подряд идущих пустых клеток
+        let rowFen = "";
+
+        for (let col = 0; col < 8; col++) {
+          // Индекс клетки в массиве squares:
+          const squareIndex = row * 8 + col;
+          const piece = squares[squareIndex];
+
+          if (piece === null) {
+            // Пустая клетка
+            emptyCount++;
+          } else {
+            // Если есть накопленные пустые клетки, "закрываем" их цифрой
+            if (emptyCount > 0) {
+              rowFen += emptyCount;
+              emptyCount = 0;
+            }
+            // Добавляем символ фигуры
+            rowFen += piece;
+          }
+        }
+
+        // Если строка заканчивалась на пустых клетках, добавим их число
+        if (emptyCount > 0) {
+          rowFen += emptyCount;
+        }
+
+        fenRows.push(rowFen);
+      }
+
+      // Собираем всё в одну строку через '/'
+      let fen = fenRows.join('/');
+
+      // 5. Дополняем FEN полями: очередь хода, рокировки, en-passant и т.д.
+      // Например " w - - 0 1" — ход белых, рокировок нет, нет en passant, ход №1.
+      fen += " w - - 0 1";
+
+      return fen;
+    }
+
+    /**
+     * Функция для перемешивания массива (Fisher–Yates shuffle)
+     * Изменяет сам массив (in-place).
+     */
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+    
+    var fen = generateRandomFullSetFEN();
+    var config = {
+      draggable: true,
+      position: 'start',
+      onDragStart: onDragStart,
+      onDrop: onDrop,
+      onSnapEnd: onSnapEnd,
+      position: fen,
+    };
+    var board = Chessboard('myBoard', config);
+    var game = new Chess(fen);
+
+
+    function onDragStart (source, piece, position, orientation) {
+      // do not pick up pieces if the game is over
+      if (game.game_over()) {  window.setTimeout(() => location.reload(), 16000); }
+
+      // only pick up pieces for White
+      if (piece.search(/^b/) !== -1) return false
+    }
+
+    function makeRandomMove () {
+      var possibleMoves = game.moves()
+
+      // game over
+      if (possibleMoves.length === 0)  {  window.setTimeout(() => location.reload(), 16000); }
+
+      var randomIdx = Math.floor(Math.random() * possibleMoves.length)
+      game.move(possibleMoves[randomIdx])
+      board.position(game.fen())
+    }
+
+    function onDrop (source, target) {
+      // see if the move is legal
+      var move = game.move({
+        from: source,
+        to: target,
+        promotion: 'q' // NOTE: always promote to a queen for example simplicity
+      })
+
+      // illegal move
+      if (move === null) return 'snapback'
+
+      // make random legal move for black
+      window.setTimeout(makeRandomMove, 250)
+    }
+
+    // update the board position after the piece snap
+    // for castling, en passant, pawn promotion
+    function onSnapEnd () {
+      board.position(game.fen());
+    }
+    
+    
+  </script>
+</body>
+</html>

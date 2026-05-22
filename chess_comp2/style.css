@@ -1,0 +1,40 @@
+body {
+ background-color: #EEEEEE;
+ overflow: scroll;
+}
+th,td,p { 
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size : 12px; 
+ line-height: 18px;
+}
+h3,h4,h5,p,ul,ol,dl,pre,blockquote {
+ margin-top: 5px;
+ margin-bottom: 5px;
+}
+small {
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size : 9px; 
+ line-height: 12px;
+}
+
+pre {
+ font-family: "Courier New", sans-serif; font-size: 11px; color: #C0C0C0;
+ background-color: #606060; border: #404040; border-style: solid;
+ border-width: 1px;
+}
+blockquote {
+ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+ background-color: #606060; border: #D1D7DC; border-style: solid;
+ border-width: 1px;
+}
+form {
+ margin: 3px 2px 3px 3px; 
+}
+input,textarea,select {
+ color : #000000;
+ background-color : #FFFFFF;
+ font: normal 12px Verdana, Arial, Helvetica, sans-serif;
+ border-color : #000000;
+ border-width: 1px;
+}
+input { text-indent : 2px; }

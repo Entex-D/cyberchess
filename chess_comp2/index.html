@@ -1,0 +1,75 @@
+<html>
+<HEAD>
+ <TITLE>Игра в шахматы с компьютером онлайн бесплатно без регистрации</TITLE>
+ <META http-equiv=Content-Type content="text/html; charset=windows-1251">
+ <meta name="description" content="Бесплатная игра в шахматы с компьютером. Для выполнения хода необходимо сделать два клика мышкой: после первого клика по фигуре на шахматном поле оно выделяется цветом, второй - ход">
+ <link rel="stylesheet" type="text/css" href="style.css">
+ <link rel="stylesheet" type="text/css" href="../studiere/style/style4.css">
+</HEAD>
+ 
+<BODY onLoad="l()"  bgcolor="" topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+
+<p align=center><b></b></p>
+<p align=center></p>
+
+<script type="text/javascript" src="chess.js"></script>
+<center><table width=60% border="0" cellpadding="0" cellspacing="0">
+ <tr>
+  <td>&nbsp;</td>
+  <td>
+   <input type="checkbox" onClick="pw(this)"><span title="компьютер играет белыми">компьютер играет белыми</span><br>
+   <input type="checkbox" checked="true" onChange="pb(this)"><span title="компьютер играет черными">компьютер играет черными</span>
+   <center>
+   <table><tr><td> 
+    <img src="t.png"><br>
+    <script type="text/javascript" src="chess2.js"></script>
+    <img src="u.png"><br></td>
+   </tr></table>
+   </center>
+ 
+   <table width=60% cellspacing="4"><tr><td>
+    Превращать пешки в 
+    <select class="Chess" name="Q">
+     <option value="5">Ферзя</option>
+     <option value="2">Коня</option>
+     <option value="3">Слона</option>
+     <option value="4">Ладью</option>
+    </select>
+    </td><td>
+     <div id="i"></div>
+    </td></tr>
+   </table>
+ 
+  </td>
+  <td>&nbsp;</td>
+ </tr>
+</table>
+ 
+<table width=60% border="0" cellpadding="0" cellspacing="0">
+ <tr>
+  <td>&nbsp;</td>
+  <td>
+  <b>Лог игры</b>
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="90%">
+   <tr>
+    <td width="33%" valign="top"><div id="m0"></div></td>
+    <td width="33%" valign="top"><div id="m1"></div></td>
+    <td width="33%" valign="top"><div id="m2"></div></td>
+   </tr>
+   <tr>
+    <td width="33%" valign="top"><div id="m3"></div></td>
+    <td width="33%" valign="top"><div id="m4"></div></td>
+    <td width="33%" valign="top"><div id="m5"></div></td>
+   </tr>
+  </table>
+  </center>
+  </td>
+  <td>&nbsp;</td>
+ </tr>
+</table></center>
+ 
+ 
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* Скин разработал: dvduck@mail.ru */
+
+BODY {FONT-FAMILY: Verdana; FONT-SIZE: 13px;background-color:#202020;   background-image: url(http://esex.liozenda.ru/fon/fon_dym1.jpg); color:#e4e4e4;}
+
+a.gallery, a.gallery:visited {text-decoration: none; color: #B0E0E6;}
+a.gallery:hover, a.gallery:active {text-decoration: none; color: #B0E0E6;}
+
+A.menu {COLOR: #B0E0E6; TEXT-DECORATION: none}
+A.menu:hover {COLOR: #B0E0E6; TEXT-DECORATION: none}
+
+/* Здесь ниже задаётся стиль для ссылок - все ссылки в квадратиках обведённых нежным оттенком основного цвета */
+.pgbutt a {font-family: Verdana; padding-top:2px;padding-bottom:2px;
+text-decoration: none; border: 1px #B0E0E6 solid; background: #B0E0E6; color:#fff;padding:1px 4px 1px 4px; margin: 5px 1 0 0;
+ -moz-border-radius: 4px;
+ -khtml-border-radius: 4px;
+ -webkit-border-radius: 4px;
+ border-radius: 4px;}
+
+.maininput {WIDTH: 200px; color: #B0E0E6; border: #B0E0E6 1 solid;}
+.longok {WIDTH: 130px; height:20px; background-color: #202020; color: #B0E0E6; border: #B0E0E6 1 solid;}
+.simpleok {WIDTH: 50px; height:18px; background-color: #202020; color: #B0E0E6; font-weight: bold; border: #B0E0E6 1 solid;}
+
+.toptable {FONT-SIZE: 9px; background: #B0E0E6;border-radius:8px;}
+.maintbl {background: #B0E0E6}
+TABLE.seredina {background: #202020;border-radius:8px;}
+
+TD {FONT-SIZE: 12px}
+TD.menu {FONT-SIZE: 11px; FONT-WEIGHT: bold}
+TD.main {FONT-SIZE: 11px; FONT-WEIGHT: bold}
+
+TABLE.bakfon {background: #202020;border-radius:8px;}
+TR.row1 {background: #303030}
+TR.row2 {background: #303030}
+
+a {
+
+   color:#B0E0E6;
+		font-weight:bold;
+}
+
+
+.button {
+
+
+background:#404040;
+	   color: #e4e4e4;
+border-color:#B0E0E6;
+	     font-size: 12px;
+  border-radius:8px; 
+
+	    
+}
+
+.button:hover {
+
+  border-radius:8px; 
+
+background:#404040;
+	   color: #e4e4e4;
+border-color:#B0E0E6;
+	     font-size: 12px;
+
+	    
+}
+
+
+.td {
+
+  border-radius:8px; 
+
+background:#303030;
+	   color: #e4e4e4;
+border-color:#B0E0E6;
+	     font-size: 11px;
+
+	    
+}
+
+table {
+
+  border-radius:8px; 
+background:#303030;
+	   color: #e4e4e4;
+border-color:#B0E0E6;
+	     font-size: 11px;
+
+	    
+}

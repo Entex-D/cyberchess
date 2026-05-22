@@ -1,0 +1,197 @@
+td{ border-radius:4px; }
+td:hover{ background:#525252; }
+
+td.td {
+
+	 font-size: 12px;
+
+		  color:#9F65FD;
+border-radius:8px; 
+
+ font-family: Arial, Verdana, sans-serif;
+
+ text-align: left;
+
+ background:#525252;
+
+vertical-align:top;
+background-imagel: url(http://liozenda.ru/opity/style12/td13.jpg);
+
+}
+
+
+table {
+border-radius: 10px;
+	 font-size: 12px;
+
+ background:#525252;
+
+}
+
+td.gost_name {
+
+ border-radius:8px; 
+		  color:#fff;
+
+ font-family: Arial, Verdana, sans-serif;
+
+ font-size: 11px;
+
+ text-align: left;
+
+ background:; 
+
+ background:#9F65FD;
+
+		   background-imagel: url(http://liozenda.ru/opity/style12/td13.jpg);
+
+}
+
+
+
+td.gost_text {
+
+		  color:#fff;
+
+ font-family: Arial, Verdana, sans-serif;
+
+ font-size: 12px;
+
+ text-align: left;
+
+ background:#202020;
+
+		   background-imagel: url(me1.gif);
+
+}
+
+
+
+BODY {
+
+ font-family: Arial, Verdana, Helvetica, sans-serif;
+
+ font-size: 8px;
+
+ background: #000;
+
+ color: #fff;
+
+padding: 0;
+opacity:0.9;
+margin: 0;
+
+		 background-imagel: url(body12.jpg);
+background-image: url(../style/fon_dym1.jpg);
+}
+
+
+
+a {
+
+	   color:#9F65FD;
+
+		font-weightl:bold; 
+
+}
+
+
+a:hover {
+
+color:#9F65FD;
+
+}
+
+
+
+td.td_center {
+
+background:#525252;
+
+	   color: #fff;
+border-radius:8px; 
+
+	     font-size: 12px;
+
+background-imagel: url(http://liozenda.ru/opity/style4/body4-4.jpg);
+
+}
+
+.button {
+
+border-radius:8px; 
+
+background:#404040;
+	   color: #e4e4e4;
+border-color:#9F65FD;
+	     font-size: 11px;
+
+	    
+}
+
+.button:hover {
+
+border-radius:8px; 
+
+background:#404040;
+	   color: #e4e4e4;
+border-color:#9F65FD;
+	     font-size: 11px;
+
+	    
+}
+
+
+
+ #table{
+                align: right;
+                widthl:562px;
+                heightl:510px;
+                overflow:hidden;
+                clear:both;
+                border:3px solid #9F65FD;
+            }
+            .cell{
+                widthl:54px;
+                heightl:48px;
+                floatl:left;
+                borderl:1px solid #404040;
+                box-sizingl:border-box;
+                cursorl:pointer;
+                text-alignl:center;
+                line-heightl:40px;
+                font-sizel:30px;
+                background:#C0C0C0;
+            }
+
+               .cell1{
+                widthl:54px;
+                heightl:0px;
+                float:left;
+                border:1px solid #404040;
+                box-sizing:border-box;
+                cursor:pointer;
+                text-align:center;
+                line-height:40px;
+                font-size:16px;
+                background:#e4e4e4;
+            }
+               .cell2{
+                widthl:20px;
+                heightl:48px;
+                float:left;
+                border:1px solid #404040;
+                box-sizing:border-box;
+                cursor:pointer;
+                text-align:center;
+                line-height:40px;
+                font-size:16px;
+                backgroundl:#9400D3;
+            }
+            .dark{
+                background:#D3D3D3;
+                border-color:#DCDCDC; 
+            }
+            .selected{
+                border-color:black;
+            }

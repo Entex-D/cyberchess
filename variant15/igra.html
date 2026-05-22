@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Рандомная битва двух компов</title>
+  
+<linkl rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+      integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
+      crossorigin="anonymous">
+  
+<link rel="stylesheet" href="style.css">
+  
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+        integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+        crossorigin="anonymous"></script>
+  <script src="https://chessboardjs.com/js/chess-0.10.2.min.js"></script>
+  <base href="https://chessboardjs.com/">
+</head>
+<body>
+
+<center>
+  <div id="myBoard" style="width: 40%"></div>
+</center>
+
+  <script>     
+    /**
+     * Генерирует FEN-строку со случайной расстановкой ровно 32 фигур (16 белых и 16 чёрных).
+     * Возвращает корректную FEN-нотацию (только часть, описывающую доску + базовые поля).
+     *
+     * @returns {string} Случайная FEN-нотация
+     */
+    function generateRandomFullSetFEN() {
+      // 1. Определяем набор фигур (белых и чёрных)
+      const whitePieces = ['P','P','P','P','P','N','N','N','N','R','R','R','R','R','R','K'];
+      const blackPieces = ['p','p','p','p','p','n','n','n','n','r','r','r','r','r','r','k'];
+
+      // Все 32 фигуры в одном массиве
+      const allPieces = [...whitePieces, ...blackPieces];
+
+      // 2. Создаём массив из 64 пустых клеток (null)
+      const squares = Array(64).fill(null);
+
+      // 3. Ставим все 32 фигуры в случайные клетки
+      //    Один из способов — "перемешать" список индексов 0..63 и взять первые 32
+      //    чтобы расставить все фигуры без коллизий.
+      //    Или можно последовательно находить случайную свободную клетку.
+      //    Здесь покажем "перемешивание индексов" как более «чистый» способ.
+
+      // Создаём массив индексов от 0 до 63
+      const indices = Array.from({ length: 64 }, (_, i) => i);
+      // Перемешиваем (shuffle) эти индексы
+      shuffleArray(indices);
+
+      // Перемешанные 32 первых индекса из массива будут позициями для наших фигур
+      const positionsForPieces = indices.slice(0, 32);
+
+      // Расставим фигуры по этим 32 позициям
+      for (let i = 0; i < 32; i++) {
+        squares[positionsForPieces[i]] = allPieces[i];
+      }
+
+      // 4. Преобразуем массив `squares` (64 элемента) в 8 строк по 8 клеток для FEN.
+      //
+      // По правилам FEN:
+      //   - первая строка FEN описывает 8-ю горизонталь сверху (row = 0),
+      //   - последняя строка (в FEN) — это 1-я горизонталь (row = 7).
+      //
+      // Значит, при row=0 мы берём squares[0..7], при row=1 — squares[8..15] и т.д.
+      // (сверху вниз). Но "физически" это будет описывать 8-ю, 7-ю... до 1-й линии
+      // в шахматном смысле.
+      //
+      // Если же вам нужно строго соответствовать тому, как обычно говорится, 
+      // что индекс [0] — это a8 и т. д., то всё корректно: row=0 → 8-я горизонталь.
+
+      let fenRows = [];
+      for (let row = 0; row < 8; row++) {
+        let emptyCount = 0;   // счётчик подряд идущих пустых клеток
+        let rowFen = "";
+
+        for (let col = 0; col < 8; col++) {
+          // Индекс клетки в массиве squares:
+          const squareIndex = row * 8 + col;
+          const piece = squares[squareIndex];
+
+          if (piece === null) {
+            // Пустая клетка
+            emptyCount++;
+          } else {
+            // Если есть накопленные пустые клетки, "закрываем" их цифрой
+            if (emptyCount > 0) {
+              rowFen += emptyCount;
+              emptyCount = 0;
+            }
+            // Добавляем символ фигуры
+            rowFen += piece;
+          }
+        }
+
+        // Если строка заканчивалась на пустых клетках, добавим их число
+        if (emptyCount > 0) {
+          rowFen += emptyCount;
+        }
+
+        fenRows.push(rowFen);
+      }
+
+      // Собираем всё в одну строку через '/'
+      let fen = fenRows.join('/');
+
+      // 5. Дополняем FEN полями: очередь хода, рокировки, en-passant и т.д.
+      // Например " w - - 0 1" — ход белых, рокировок нет, нет en passant, ход №1.
+      fen += " w - - 0 1";
+
+      return fen;
+    }
+
+    /**
+     * Функция для перемешивания массива (Fisher–Yates shuffle)
+     * Изменяет сам массив (in-place).
+     */
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+
+      var fen = generateRandomFullSetFEN();
+      var board = Chessboard('myBoard', fen);
+      var game = new Chess(fen);
+      function makeRandomMove () {
+        var possibleMoves = game.moves();
+
+        if (game.game_over()) location.reload();
+
+        var randomIdx = Math.floor(Math.random() * possibleMoves.length);
+        game.move(possibleMoves[randomIdx]);
+        board.position(game.fen());
+
+        window.setTimeout(makeRandomMove, 750);
+      }
+    
+      window.setTimeout(makeRandomMove, 750);
+  </script>
+</body>
+</html>

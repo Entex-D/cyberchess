@@ -1,0 +1,95 @@
+/* Скин разработал: dvduck@mail.ru */
+
+BODY {FONT-FAMILY: Verdana; FONT-SIZE: 13px;background-color:#202020;  background-image: url(http://liozenda.ru/opity/style12/body12.jpg); color:#e4e4e4;}
+
+a.gallery, a.gallery:visited {text-decoration: none; color: #9F65FD;}
+a.gallery:hover, a.gallery:active {text-decoration: none; color: #9F65FD;}
+
+A.menu {COLOR: #9F65FD; TEXT-DECORATION: none}
+A.menu:hover {COLOR: #9F65FD; TEXT-DECORATION: none}
+
+/* Здесь ниже задаётся стиль для ссылок - все ссылки в квадратиках обведённых нежным оттенком основного цвета */
+.pgbutt a {font-family: Verdana; padding-top:2px;padding-bottom:2px;
+text-decoration: none; border: 1px #9F65FD solid; background: #9F65FD; color:#fff;padding:1px 4px 1px 4px; margin: 5px 1 0 0;
+ -moz-border-radius: 4px;
+ -khtml-border-radius: 4px;
+ -webkit-border-radius: 4px;
+ border-radius: 4px;}
+
+.maininput {WIDTH: 200px; color: #9F65FD; border: #9F65FD 1 solid;}
+.longok {WIDTH: 130px; height:20px; background-color: #202020; color: #9F65FD; border: #9F65FD 1 solid;}
+.simpleok {WIDTH: 50px; height:18px; background-color: #202020; color: #9F65FD; font-weight: bold; border: #9F65FD 1 solid;}
+
+.toptable {FONT-SIZE: 9px; background: #9F65FD;border-radius:8px;}
+.maintbl {background: #9F65FD}
+TABLE.seredina {background: #202020;border-radius:8px;}
+
+TD {FONT-SIZE: 12px}
+TD.menu {FONT-SIZE: 11px; FONT-WEIGHT: bold}
+TD.main {FONT-SIZE: 11px; FONT-WEIGHT: bold}
+
+TABLE.bakfon {background: #202020;border-radius:8px;}
+TR.row1 {background: #303030}
+TR.row2 {background: #303030}
+
+
+a {
+
+   color:#9F65FD;
+		font-weight:bold;
+}
+
+
+a:hover {
+
+   color:#fff;
+		font-weight:bold;
+}
+
+.button {
+
+
+background:#404040;
+	   color: #9F65FD;
+border-color:#9F65FD;
+	     font-size: 11px;
+  border-radius:8px; 
+
+	    
+}
+
+.button:hover {
+
+  border-radius:8px; 
+
+background:#202020;
+	   color: #e4e4e4;
+border-color:#9F65FD;
+	     font-size: 11px;
+
+	    
+}
+
+.td {
+
+  border-radius:8px; 
+
+background:#303030;
+	   color: #e4e4e4;
+border-color:#9F65FD;
+	     font-size: 11px;
+
+	    
+}
+
+table {
+
+  border-radius:8px; 
+
+
+	   color: #e4e4e4;
+border-color:#9F65FD;
+	     font-size: 11px;
+
+	    
+}
