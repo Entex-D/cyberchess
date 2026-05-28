@@ -39,7 +39,7 @@ $sh[$hod_one-23]=='84' || $sh[$hod_one+23]=='84' || $sh[$hod_one-25]=='84' || $s
 if($hod_two!='1000' && $sh[$hod_two]!='40' && $sh[$hod_two]<'30') {
 
 if($sh[$hod_two-1]=='91' || $sh[$hod_two+1]=='91' || $sh[$hod_two-24]=='91' || $sh[$hod_two+24]=='91' || 
-$sh[$hod_two-23]=='91' || $sh[$hod_two+23]=='91' || $sh[$hod_two-25]=='91' || $sh[$hod_two+25]=='91') { $hod_two='1000';$hod_two='1000'; $magic='1'; if($zvuki_hody=='11') { ?><audio src="./zvuk/zamok.mp3" autoplay="autoplay"></audio><? }}
+$sh[$hod_two-23]=='91' || $sh[$hod_two+23]=='91' || $sh[$hod_two-25]=='91' || $sh[$hod_two+25]=='91') { $hod_two='1000';$hod_two='1000'; $magic='1'; if($zvuki_hody=='11' && $defe[0]==0) { $zapret=1; ?><audio src="./zvuk/zamok.mp3" autoplay="autoplay"></audio><? }}
 
 }
 

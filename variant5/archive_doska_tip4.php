@@ -94,127 +94,129 @@ if($figury[$sx]=='94') { $sh[$sx]='../picture/stena.jpg'; }
 
 <? $x='54'; ?>
 
+<? include('../archive_podsvetka.php'); ?>
+
       <div id="table">
          
 <div class="cell2" id="">8</div>
 
-  <div class="cell id" id="A8"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="B8"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="C8"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="D8"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="E8"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="F8"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="G8"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="H8"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="I8"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="K8"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell id" id="L8"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="M8"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+  <div class="cell id" id="A8" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="B8" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="C8" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="D8" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="E8" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="F8" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="G8" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="H8" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="I8" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="K8" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell id" id="L8" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="M8" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
         
 <br><div class="cell2" id="">7</div>
 
- <? $x=$x+'13'; ?> <div class="cell dark" id="A7"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="B7"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="C7"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="D7"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="E7"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="F7"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="G7"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="H7"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="I7"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="K7"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="L7"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="M7"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+ <? $x=$x+'13'; ?> <div class="cell dark" id="A7" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="B7" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="C7" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="D7" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="E7" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="F7" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="G7" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="H7" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="I7" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="K7" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="L7" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="M7" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
         
 <div class="cell2" id="">6</div>
 
- <? $x=$x+'13'; ?> <div class="cell" id="A6"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="B6"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="C6"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="D6"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="E6"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="F6"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="G6"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="H6"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="I6"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="K6"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="L6"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="M6"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+ <? $x=$x+'13'; ?> <div class="cell" id="A6" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="B6" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="C6" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="D6" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="E6" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="F6" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="G6" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="H6" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="I6" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="K6" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="L6" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="M6" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
         
 <div class="cell2" id="">5</div>
 
- <? $x=$x+'13'; ?> <div class="cell dark" id="A5"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="B5"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="C5"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="D5"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="E5"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="F5"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="G5"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="H5"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="I5"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="K5"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="L5"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="M5"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+ <? $x=$x+'13'; ?> <div class="cell dark" id="A5" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="B5" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="C5" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="D5" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="E5" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="F5" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="G5" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="H5" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="I5" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="K5" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="L5" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="M5" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
         
 <div class="cell2" id="">4</div>
 
- <? $x=$x+'13'; ?> <div class="cell" id="A4"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="B4"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="C4"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="D4"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="E4"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="F4"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="G4"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="H4"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="I4"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="K4"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="L4"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="M4"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+ <? $x=$x+'13'; ?> <div class="cell" id="A4" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="B4" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="C4" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="D4" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="E4" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="F4" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="G4" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="H4" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="I4" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="K4" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="L4" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="M4" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
         
 <div class="cell2" id="">3</div>
 
- <? $x=$x+'13'; ?> <div class="cell dark" id="A3"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="B3"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="C3"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="D3"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="E3"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="F3"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="G3"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="H3"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="I3"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="K3"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="L3"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="M3"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+ <? $x=$x+'13'; ?> <div class="cell dark" id="A3" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="B3" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="C3" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="D3" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="E3" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="F3" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="G3" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="H3" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="I3" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="K3" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="L3" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="M3" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
         
 <div class="cell2" id="">2</div>
 
- <? $x=$x+'13'; ?> <div class="cell" id="A2"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="B2"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="C2"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="D2"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="E2"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="F2"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="G2"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="H2"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="I2"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="K2"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="L2"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="M2"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+ <? $x=$x+'13'; ?> <div class="cell" id="A2" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="B2" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="C2" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="D2" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="E2" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="F2" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="G2" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="H2" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="I2" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="K2" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="L2" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="M2" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
         
 <div class="cell2" id="">1</div>
 
- <? $x=$x+'13'; ?> <div class="cell dark" id="A1"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell id" id="B1"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="C1"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="D1"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="E1"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="F1"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="G1"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="H1"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="I1"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell" id="K1"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell dark" id="L1"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
-           <? $x=$x+'1'; ?> <div class="cell id" id="M1"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+ <? $x=$x+'13'; ?> <div class="cell dark" id="A1" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell id" id="B1" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="C1" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="D1" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="E1" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="F1" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="G1" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="H1" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="I1" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell" id="K1" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell dark" id="L1" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
+           <? $x=$x+'1'; ?> <div class="cell id" id="M1" style="background-color:<? echo $color_b[$x]; ?>"><img src="<?echo $sh[$x]?>" <? echo 'width='.$width; echo 'height='.$height; ?>></div>
         
  <div class="cell2" id=""></div>
     
@@ -231,8 +233,6 @@ if($figury[$sx]=='94') { $sh[$sx]='../picture/stena.jpg'; }
   <div class="cell1" id="">L</div>
   <div class="cell1" id="">M</div>
   
-  </div>
-
   </div>
 </td>
 

@@ -190,6 +190,7 @@ if($style=='4') { $di='4'; }
 if($style=='16') { $di='16'; }
 $width_td='10';
 $width_img='80';
+$width_img2='64';
 ?>
 
 
@@ -223,11 +224,11 @@ $xed='<table width=90%>
 </td>
 
 <td width='.$width_td.'% class=td_center>
-<br><center><a target=_blank href=model_game/variant7-igra'.$x.'-style'.$di.'.jpg><img id=fixa src=model_game/variant7-igra'.$x.'-style'.$di.'.jpg width='.$width_img.'></></a> </center>
+<br><center><a target=_blank href=model_game/variant7-igra'.$x.'-style'.$di.'.jpg><img id=fixa src=model_game/variant7-igra'.$x.'-style'.$di.'.jpg width='.$width_img2.'%></></a> </center>
 </td>
 
 <td width='.$width_td.'% class=td_center>
-<br><center><a target=_blank href=model_game/variant8-igra'.$x.'-style'.$di.'.jpg><img id=fixa src=model_game/variant8-igra'.$x.'-style'.$di.'.jpg width='.$width_img.'></></a> </center>
+<br><center><a target=_blank href=model_game/variant8-igra'.$x.'-style'.$di.'.jpg><img id=fixa src=model_game/variant8-igra'.$x.'-style'.$di.'.jpg width='.$width_img.'%></></a> </center>
 </td>
 
 

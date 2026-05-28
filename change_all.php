@@ -110,6 +110,7 @@ $new_kletki='6'; setcookie ("new_kletki", $new_kletki, time() + 3600*24*7);
 $new_transform='6'; setcookie ("new_transform", $new_transform, time() + 3600*24*7); 
 $new_transform_magic='6'; setcookie ("new_transform_magic", $new_transform_magic, time() + 3600*24*7); 
 $change_bomb='6'; setcookie ("change_bomb", $change_bomb, time() + 3600*24*7);  
+$dobro_color='6'; setcookie ("dobro_color", $dobro_color, time() + 3600*24*7); 
 $change_all='6'; setcookie ("change_all", $change_all, time() + 3600*24*7); 
 
  }
@@ -122,6 +123,7 @@ $new_kletki='11'; setcookie ("new_kletki", $new_kletki, time() + 3600*24*7);
 $new_transform='11'; setcookie ("new_transform", $new_transform, time() + 3600*24*7);  
 $new_transform_magic='11'; setcookie ("new_transform_magic", $new_transform_magic, time() + 3600*24*7);  
 $change_bomb='11'; setcookie ("change_bomb", $change_bomb, time() + 3600*24*7);  
+$dobro_color='11'; setcookie ("dobro_color", $dobro_color, time() + 3600*24*7); 
 $change_all='11'; setcookie ("change_all", $change_all, time() + 3600*24*7);  
 
 }

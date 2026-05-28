@@ -223,4 +223,4 @@ if($style_figure=='4') { $figure_x='figure_design4/';  $width=42; $height=38; }
   </div>
    </div></center>
 
-<? include('js_podsvetka.php'); ?>
+<?  include('js_podsvetka.php'); ?>

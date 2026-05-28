@@ -4,7 +4,7 @@
 
 <tr bgcolor=#484848><td width=30%><br><font size=3><strong><em><center>Вид клетки</center></em></strong></font><br></td>
 <td bgcolor=#484848 width=20%><font size=3><strong><em><center> Название</center></em></strong></font></td>
-<td bgcolor=#484848 width=54%><font size=3><strong><em><center> Как ходит</center></em></strong></font></td>
+<td bgcolor=#484848 width=54%><font size=3><strong><em><center> Что делает</center></em></strong></font></td>
 </tr>
 
 

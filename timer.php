@@ -217,7 +217,7 @@ if(!$db) { $sxx='./archive_doski/'.$doska.'/tip'.$tip.'/'.$number.'/'.$number.'_
 } else if($db) { $sxx='../archive_doski/'.$doska.'/tip'.$tip.'/'.$number.'/'.$number.'_statix.txt'; }
 
 
-if($exxo[17]<>$server_time_sec && $exxo[17]>'0' && $number>' ' && file_exists($sxx) && !$db) { 
+if($exxo[17]<>$server_time_sec && $exxo[17]>'0' && $number>' ' && file_exists($sxx)) { 
 
 $openchatdb=fopen($sxx,"w");
 
@@ -250,7 +250,7 @@ if(fwrite($openchatdb,$exxo[24]."\n")) { ;  }
 fclose($openchatdb);
 
 
-}
+
 //echo '$sxx='.$sxx;
 //}
 //echo '$exxo[12]='.$exxo[12];
@@ -262,7 +262,7 @@ if(!$db) { include('calculation_rating.php'); } else if($db) { include('calculat
 
 if(!$db) {  include('opoveshenie/close_game_write.php'); } else if($db) {  include('opoveshenie/close_game_write.php'); }
 
- 
+} 
                         
 
 

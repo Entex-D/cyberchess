@@ -56,6 +56,42 @@ if($dd[$sed]=='82') { $sh[$sed]='82'; }
 
 for($g=0;$g<300;$g++) {
 
+ if($sh[$g]=='91') { 
+
+$color_b[$g-1]=$color_b_x; 
+$color_b[$g+1]=$color_b_x; 
+$color_b[$g-24]=$color_b_x; 
+$color_b[$g+24]=$color_b_x; 
+$color_b[$g-23]=$color_b_x; 
+$color_b[$g+23]=$color_b_x; 
+$color_b[$g-25]=$color_b_x; 
+$color_b[$g+25]=$color_b_x; 
+$color_b[$g]=$color_b_x3; 
+}
+
+
+ if($sh[$g]=='84') { 
+
+$color_b[$g-1]=$color_b_x2; 
+$color_b[$g+1]=$color_b_x2; 
+$color_b[$g-24]=$color_b_x2; 
+$color_b[$g+24]=$color_b_x2; 
+$color_b[$g-23]=$color_b_x2; 
+$color_b[$g+23]=$color_b_x2; 
+$color_b[$g-25]=$color_b_x2; 
+$color_b[$g+25]=$color_b_x2; 
+$color_b[$g]=$color_b_x4; 
+}
+
+                                      }
+
+
+
+
+
+
+for($g=0;$g<300;$g++) {
+
 if($shah=='1') { if($sh[$g]=='6') { $color_b[$g]='#8B0000'; } }
 if($shah=='2') { if($sh[$g]=='16') { $color_b[$g]='#8B0000'; } }
 
@@ -63,6 +99,9 @@ if($shah=='1') { if($figury[$g]=='6') { $color_b[$g]='#8B0000'; } }
 if($shah=='2') { if($figury[$g]=='16') { $color_b[$g]='#8B0000'; } }
 
                                       }
+
+
+
 
 if($zvuki_hody=='11') { 
 

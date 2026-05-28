@@ -70,8 +70,12 @@ if(preg_match('/'.$ip_adress.'/',$ip)) { $troxa_n='Da'; }
 
 <?
 if($name) {
-if(!$tip) { $gip=rand(1,8); } else $gip=$tip;
-if($gip) { echo '<a  href=../variant'.$gip.'/archive_doski_tip4.php?namer='.$name.'&tip='.$gip.'>Архив</a>'; }
+if(!$tip) { $gip=rand(1,2); } else $gip=$tip;
+if($gip) { echo '<a  href=../variant'.$gip.'/archive_doski_tip4.php?namer='.$name.'&tip='.$gip.'>Архив</a>
+<ul>
+<li><a  href=../archive_all_namer.php>Список игроков</a></li>
+</ul>
+'; }
                }
 ?>
 
@@ -83,6 +87,8 @@ if($gip) { echo '<a  href=../variant'.$gip.'/archive_doski_tip4.php?namer='.$nam
 <li><a  href=#>Правила</a>
 <ul>
 <li><a  href=../analiz_neiro.php>Анализ от нейросети</a></li>
+<li><a  href=../analiz_neiro2.php>Почему здесь не играют</a></li>
+<li><a  href=../analiz_neiro3.php>Это мёртвая игра?</a></li>
 <li><a  href=../rules.php>Клетки</a></li>
 <li><a  href=../figure.php>Ходы фигур >>></a>
 <ul>
@@ -443,6 +449,9 @@ if($change_all=='6') { $mmd='<img src=../picture/igrok_status/offline.jpg width=
 if($new_vhod=='11') { $ddg='<img src=../picture/igrok_status/online.jpg width=10 />'; } else
 if($new_vhod=='6') { $ddg='<img src=../picture/igrok_status/offline.jpg width=12 />'; }
 
+if($dobro_color=='11') { $mmb='<img src=../picture/igrok_status/online.jpg width=10 />'; } else
+if($dobro_color=='6') { $mmb='<img src=../picture/igrok_status/offline.jpg width=12 />'; }
+
 if($style_run=='16') { $qqw='Св. Желтый'; } else
 if($style_run=='4') { $qqw='Т. желтый'; } else
 if($style_run=='6') { $qqw='Розовый'; } else
@@ -486,6 +495,7 @@ if($style_figure=='11') { $qqr='1'; }
 <li><a  href=#> Для Профессионалов </a></li>
 </ul>
 
+<li><a  href=../change_color.php>Вкл / Откл подсветку  [ <? echo $mmb; ?> ] </a></li>
 <li><a  href=../change_all.php>Вкл / Откл все новшества  [ <? echo $mmd; ?> ] </a></li>
 <li><a  href=../change_vhod.php>Вкл / Откл вход на сайт  [ <? echo $ddg; ?> ] </a>
 </ul>
@@ -572,8 +582,23 @@ if($style_figure=='11') { $qqr='1'; }
 </ul>
 
 
-<li><a  href=../Source_Cyber_chess_07_04_2026.zip>Исходник</a>
+<li><a  href=#>Исходник</a>
 <ul>
+<li><a target=_blank href=https://github.com/Entex-D/cyberchess> На сайте github</a>
+
+<ul>
+<li><a href=#>от 21.05.2026</a></li>
+</ul>
+
+
+<li><a href=../Source_Cyber_chess_07_04_2026.zip> Папка zip</a>
+
+<? $ttq=date("d.m.Y"); ?>
+
+<ul>
+<li><a href=#>от <? echo $ttq; ?></a></li>
+</ul>
+
 </ul>
 
 

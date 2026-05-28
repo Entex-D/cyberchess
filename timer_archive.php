@@ -209,10 +209,9 @@ $exxo[14]=$hours.':'.$minutes.':'.$g;
 
 
 
+//if(!$db) { $exxo[17]=$server_time_sec; } 
 
-if(!$db) { $exxo[17]=$server_time_sec; } 
-
-if(!$db) { $sxx='./archive_doski/'.$doska.'/tip'.$tip.'/'.$number.'/'.$number.'_statix.txt';
+if(!$db) { $sxx='../archive_doski/'.$doska.'/tip'.$tip.'/'.$number.'/'.$number.'_statix.txt';
 } else if($db) { $sxx='../archive_doski/'.$doska.'/tip'.$tip.'/'.$number.'/'.$number.'_statix.txt'; }
 
 
@@ -255,15 +254,7 @@ fclose($openchatdb);
 //echo '$exxo[12]='.$exxo[12];
 
 global $index_win;
-
-//if(!$db) { include('calculation_btc.php'); } else if($db) { include('calculation_btc.php'); }
-//if(!$db) { include('calculation_rating.php'); } else if($db) { include('calculation_rating.php'); }
-
-//if(!$db) {  include('opoveshenie/close_game_write.php'); } else if($db) {  include('opoveshenie/close_game_write.php'); }
-
- 
-                        
-
+                  
 unset($exxo);
 
 ?>

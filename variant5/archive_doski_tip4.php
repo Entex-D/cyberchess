@@ -139,31 +139,7 @@ echo '&nbsp;&nbsp;&nbsp;&nbsp;У игрока '.$namer.' выигрышей '.$v
 
 //считываем гюесты списком
 
-//echo '<br><br>';
-
-$dir_n = '../archive_doski';
- 
-if (is_dir($dir_n))
-   $dir_file_cnt_n = scandir($dir_n);
- 
-// Первый и второй элементы массив $dir_file_cnt это - '.' и '..'  , поэтому
-unset($dir_file_cnt_n[0], $dir_file_cnt_n[1]);
-// и выводим кол-во
-//echo count($dir_file_cnt_n);
-
-$doski_tip_n1=count($dir_file_cnt_n);
-
-echo '&nbsp;&nbsp;&nbsp;Игроков всего найдено '.$doski_tip_n1.':<hr width=100% class=def size=2><br><center>';
-
-$i='0';
-for($s=0;$s<$doski_tip_n1+3;$s++) {   //начало for
-
-echo '&nbsp;&nbsp;&nbsp;<a href=archive_doski_tip4.php?namer='.$dir_file_cnt_n[$s].'&tip=5>'.$dir_file_cnt_n[$s].'</a>';
-          $i=$i+'1';
-if($i=='11') { $i='0'; echo '<br>'; }                         
-}
-echo '</center><br>'; 
-//считываем гюесты списком
+include('../archive_namer.php');
 
 
 
@@ -176,14 +152,7 @@ echo '</center><br>';
 
 
 } 
-echo '<br><font size=1><strong>&nbsp;&nbsp;&nbsp;&nbsp;Будут показываться последние '.$doski_v_archive.' досок игрока <a href=#>'.$namer.'</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Доски и ходы обновляются после хода белых</strong></font>';
-//$deske=$schet_doski_max+'1';
-//echo '<br>$schet_doski_min='.$schet_doski_min;
-//echo '<br>$schet_doski_max='.$schet_doski_max;
-//echo '<br>$deske='.$deske;
 
-//echo '<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href=archive_doski_tip5.php?namer='.$namer.'&deske='.$deske.'>Следующие</a> 10 досок игрока '.$namer;
 ?>
 <br><br></em></strong></font></td><tr></table><br></center>
 

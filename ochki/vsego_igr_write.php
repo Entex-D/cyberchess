@@ -25,7 +25,7 @@ $vsego_igr[0] = preg_replace("|[\r\n]+|", "", $vsego_igr[0]);
 
 
 
-$games=$vsego_igr[0]+1;
+if(!$dosok_all) { $games=$vsego_igr[0]+1; } else $games=$dosok_all;
 
 if ( file_exists($data1) ) { 
 

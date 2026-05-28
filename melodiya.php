@@ -90,6 +90,7 @@ $razmer = round((float)$razmer, 1);
 
 $filename = './melodiya/'.$file;
 if($file=='Savage_44-Dance_Party.mp3' || $file=='Savage_44-Love_Emotion.mp3' || $file=='alan-morris-cathy-burton-im-not-alone.mp3') { $bitrate_kbps = 128; } else
+if($file=='Benny_Benassi_-_Every_single_day.mp3' || $file=='Benny_Benassi_feat._Dhany_-_Hit_My_Heart.mp3') { $bitrate_kbps = 192; } else
 $bitrate_kbps = 320; // Укажите битрейт вашего MP3 в kbps
 
 $filesize = filesize($filename); // Размер файла в байтах

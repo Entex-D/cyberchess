@@ -231,6 +231,34 @@ if($p==0) { $style_figure='4'; setcookie ("style_figure", $style_figure, time() 
 
 
 
+ if(!isset($_COOKIE['dobro_color'])) { 
+
+ $dobro_color='11'; setcookie ("dobro_color", $dobro_color, time() + 3600);
+
+                                           }
+
+
+
+if($dobro_color==11) {
+
+if($style_run==11) { $color_b_x='#2da3b3'; $color_b_x2='#0a6d7a'; $color_b_x3='#07444d'; $color_b_x4='#03424a'; } else
+if($style_run==16) { $color_b_x='#dbad5e'; $color_b_x2='#c49749'; $color_b_x3='#a16e16'; $color_b_x4='#875c10'; } else
+if($style_run==6) { $color_b_x='#d685d6'; $color_b_x2='#c785c7'; $color_b_x3='#a84aa8'; $color_b_x4='#8c3e8c'; } else
+if($style_run==4) { $color_b_x='#d1984d'; $color_b_x2='#b58443'; $color_b_x3='#a16e16'; $color_b_x4='#875c10'; } 
+
+} else { $color_b_x=''; $color_b_x2=''; }
+
+
+
+
+
+
+
+
+
+
+
+
 //ниже запись в анкету единых настроек
 
 if($name) {
