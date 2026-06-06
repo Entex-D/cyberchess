@@ -12,9 +12,11 @@ unset($dir_file_cnt_n[0], $dir_file_cnt_n[1]);
 
 $doski_tip_n1=count($dir_file_cnt_n);
 
-echo '&nbsp;&nbsp;&nbsp;<font size=4><center>Игроков всего найдено '.$doski_tip_n1.'</center></font><center>';
+echo '&nbsp;&nbsp;&nbsp;<center><font size=4>Игроков всего найдено '.$doski_tip_n1.'</font>';
 
-?><table width=80%><tr>
+if(!$crox) { echo ' <font size=2><a href=archive_all_namer.php?crox=da>не активные</a></font>'; } else echo ' <font size=2><a href=archive_all_namer.php>активные</a></font>';
+
+?><br><table width=80%><tr>
 
 <td bgcolor=#303030><center><br><font size=4>№</font></center></td>
 <td bgcolor=#303030><center><font size=4>Игрок</font></center></td>
@@ -31,7 +33,7 @@ include('./vsego_doski_archive_podval2.php');
 
 if($dir_file_cnt_n[$s]==$name) { $text_done=' / Вы'; } else $text_done='';
 
-if($dobro_d=='da') {
+if($dobro_d=='da' || $crox=='da') {
 echo '<tr><td width=4% bgcolor=#363636><center>'.$i.'</center></td><td bgcolor=#464646><center>&nbsp;&nbsp;&nbsp;[[- <a href=variant'.$tip.'/archive_doski_tip4.php?namer='.$dir_file_cnt_n[$s].'&tip='.$tip.'>'.$dir_file_cnt_n[$s].'</a>'.$text_done.' -]]</center></td>
 <td bgcolor=#363636><center>'.$dosok_vsego.'</center></td>
 <td bgcolor=#464646><center><br>'.$dosok_variant.'</center></td>

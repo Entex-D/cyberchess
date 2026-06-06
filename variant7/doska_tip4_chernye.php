@@ -5,18 +5,18 @@
 <style>
 
   .cell{
-                width:49px;
+                width:46px;
                 height:42px;
             }
         
                .bomb{
-                width:49px;
+                width:46px;
                 height:42px;
       background:#707070;
                }
                
                .cell1{
-                width:49px;
+                width:46px;
                 height:0px;
           }
       
@@ -25,7 +25,7 @@
                 height:0px;
             }
                .bukvi{
-                width:49px;
+                width:46px;
                 height:20px;
             }
 
@@ -67,8 +67,8 @@ if($style_figure=='4') { $figure_x='figure_design4/';  $width=42; $height=38; }
  );
 
 ?>
- 
-<? include('js_podsvetka.php'); ?>
+
+ <? include('js_podsvetka.php'); ?>
 
       <? $x='229'; ?>
 

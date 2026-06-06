@@ -35,7 +35,7 @@ if(isset($_COOKIE['name'])) { if(!preg_match('/^[^a-zA-Z]+$/',$name) | !preg_mat
     <meta http-equiv="Content-Type" content="text/html; Charset=UTF-8" >
         <style>
             #table{
-                width:425px;
+                width:400px;
                 height:380px;
             background:#707070;
            border-radius:10px;

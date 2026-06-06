@@ -5,18 +5,18 @@
 <style>
 
   .cell{
-                width:47px;
+                width:46px;
                 height:42px;
             }
         
                .bomb{
-                width:47px;
+                width:46px;
                 height:42px;
       background:#707070;
                }
                
                .cell1{
-                width:47px;
+                width:46px;
                 height:0px;
           }
       
@@ -25,7 +25,7 @@
                 height:0px;
             }
                .bukvi{
-                width:47px;
+                width:46px;
                 height:20px;
             }
 

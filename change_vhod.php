@@ -102,8 +102,8 @@ if($new_vhod=='11' && $s==5) { ?><audio src="./zvuk/run_zvuk.mp3" autoplay="auto
 
 <?
 
-if($pink) { $new_vhod='6'; setcookie ("new_vhod", $new_vhod, time() + 3600*24*7);  }
-if($crystal) { $new_vhod='11'; setcookie ("new_vhod", $new_vhod, time() + 3600*24*7);  }
+if($pink) { $new_vhod='6'; setcookie ("new_vhod", $new_vhod, time() + 3600*24*7*4);  }
+if($crystal) { $new_vhod='11'; setcookie ("new_vhod", $new_vhod, time() + 3600*24*7*4);  }
 
 
 if($orange || $green || $pink || $crystal || $style1 || $style2) { 
@@ -132,6 +132,9 @@ fclose($openchatdb);
 
 
 if($orange || $green || $pink || $crystal || $style1 || $style2) { echo "<meta http-equiv='refresh' content='1;url=change_vhod.php?s=5'>"; }
+
+if($s==5 && $new_vhod==11) { echo "<meta http-equiv='refresh' content='2;url=index.php'>"; }
+
 ?>
 <br>
 <? include('podval.php');

@@ -72,7 +72,8 @@ if($style_figure=='4') { $figure_x='figure_design4/';  $width=42; $height=38; }
    86 => 'picture/vzryv.gif',
   90 => 'picture/podarok.png',
    91 => 'picture/zamok.png',
-   93 => 'picture/almaz.png',
+  92 => 'picture/baza.png',
+  93 => 'picture/almaz.png',
     94 => 'picture/stena.jpg',
   //.....
  );

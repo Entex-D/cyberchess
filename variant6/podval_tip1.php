@@ -92,6 +92,7 @@ if($shah=='2') { $exxo[11]='Белые'; }
 		  		
 if(!$shah) { $eer=rand(0,1); if($eer==1) { include('AI3/random.php'); } } 
 if(!$shah && !$ok_hod_attack) { $eet=rand(0,1); if($eet==1) { include('AI2/random.php'); } } 
+if(!$ok_hod_attack) { include('AI2/ataka_neiro_4_figure.php');  } 
  if(!$ok_hod_attack) { include('AI/coord.php'); } 
 include('AI/hody.php');
 			  }
@@ -420,9 +421,9 @@ if($sh[$hod_one]>'10' & $sh[$hod_two]>'10' &$sh[$hod_one]<'30' & $sh[$hod_two]<'
 $sh[$hod_one]!='1' && $sh[$hod_one]!='11' && $sh[$hod_one]!='9' && $sh[$hod_one]!='19')  { 
 
 if(!isset($_COOKIE['avto_hod']))  {  
- if($name==$exxo[3] & $qq=='2' & $sh[$hod_one]<'10' & $sh[$hod_one]>'0') {   echo '<br><br>Попытка хода черными,вражескими фигурами';  $hod_one='1000'; $hod_two='1000';   }
+ if($name==$exxo[3] & $exxo[11]=='Белые' & $qq=='2' & $sh[$hod_one]<'10' & $sh[$hod_one]>'0') {   echo '<br><br>Попытка хода черными,вражескими фигурами';  $hod_one='1000'; $hod_two='1000';   }
 }
-if($name==$exxo[4] & $qq=='2' & $sh[$hod_one]>'10' & $sh[$hod_one]<'30') {  echo '<br><br>Попытка хода белыми,вражескими фигурами';  $hod_one='1000'; $hod_two='1000';  }
+if($name==$exxo[4]  & $exxo[11]=='Черные' & $qq=='2' & $sh[$hod_one]>'10' & $sh[$hod_one]<'30') {  echo '<br><br>Попытка хода белыми,вражескими фигурами';  $hod_one='1000'; $hod_two='1000';  }
 
 if($sh[$hod_one]<'10' & $sh[$hod_two]<'10' & $hod_one!='1000' && $sh[$hod_two]!='16' && $sh[$hod_one]!='6' && $sh[$hod_two]!='6') {  echo '<br>Черные обмениваются с '.$hod_kuda; $figura_obmen=$sh[$hod_two]; }
 if($sh[$hod_one]>'10' & $sh[$hod_two]>'10' &$sh[$hod_one]<'30' & $sh[$hod_two]<'30' && $sh[$hod_two]!='6' && $sh[$hod_one]!='16' && $sh[$hod_two]!='16') {  echo '<br>Белые обмениваются с '.$hod_kuda; $figura_obmen=$sh[$hod_two];  }

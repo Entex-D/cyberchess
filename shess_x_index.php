@@ -38,7 +38,6 @@
 <div id="panec"></div>
 	
 
-
 <script>
 		function show()
 		{
@@ -53,10 +52,9 @@
 	
 		$(document).ready(function(){
 			show();
-			setInterval('show()',1000*4);
+			setInterval('show()',1000*3);
 		});
 	</script>
 	
-
 
 </body></html>

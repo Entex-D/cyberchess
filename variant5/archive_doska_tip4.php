@@ -85,6 +85,7 @@ if($figury[$sx]=='85') { $sh[$sx]='../picture/detonator.png'; }
 if($figury[$sx]=='86') { $sh[$sx]='../picture/vzryv.gif'; }
 if($figury[$sx]=='90') { $sh[$sx]='../picture/podarok.png'; }
 if($figury[$sx]=='91') { $sh[$sx]='../picture/zamok.png'; }
+if($figury[$sx]=='92') { $sh[$sx]='../picture/baza.png'; }
 if($figury[$sx]=='93') { $sh[$sx]='../picture/almaz.png'; }
 if($figury[$sx]=='94') { $sh[$sx]='../picture/stena.jpg'; }
 
