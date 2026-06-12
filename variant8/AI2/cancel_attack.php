@@ -1296,7 +1296,7 @@ if($dona=='9') { echo 'Атака отменяется,защита призра
 if($dona=='8') { echo 'Атака отменяется,защита медведем<br>'; }
 if($dona=='7') { echo 'Атака отменяется,защита ястребом<br>'; }
 if($dona=='6') { echo 'Атака отменяется,защита королем<br>'; }
-if($dona) { $dobro_x='Net'; $hod_one='1000';  $hod_two='1000'; unset($ok_hod_attack); }
+if($dona && !$shah) { $dobro_x='Net'; $hod_one='1000';  $hod_two='1000'; unset($ok_hod_attack); }
 
                                   }
 

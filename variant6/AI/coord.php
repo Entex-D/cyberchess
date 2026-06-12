@@ -1428,7 +1428,7 @@ if($xvv!='da') { include('cancel_attack.php'); }
 
 ?>
 
-<? if($shah) { 
+<? if($shah) {
 
 $yy=rand(0,1);
 if($yy=='0') { include('coord_shah.php'); } 

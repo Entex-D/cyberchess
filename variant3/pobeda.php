@@ -61,12 +61,6 @@ if($exxo[2]=='Comp' && $exxo[1]!='Comp' && $shah=='2' && $exxo[3]=='Comp') { if(
 
 
 
-if($exxo[2]=='Comp' && $exxo[4]=='Comp' && $exxo[11]=='Черные') { if($dimx[0]>$zvuk_sdayus / 3 && $dimx[0]<$zvuk_sdayus / 3 + 2) {  ?><audio src="./zvuk/run_random_hod.mp3" autoplay="autoplay"></audio><? } }
-
-if($exxo[2]=='Comp' && $exxo[3]=='Comp' && $exxo[11]=='Белые') { if($dimx[1]>$zvuk_sdayus / 3 && $dimx[1]<$zvuk_sdayus / 3 + 2) {  ?><audio src="./zvuk/run_random_hod.mp3" autoplay="autoplay"></audio><? } }
-
-
-
 
 
 

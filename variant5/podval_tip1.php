@@ -64,7 +64,7 @@ $exxo[4]='Comp';
 $exxo[3]='Comp';
  } 
 
-if(!$shah && !$ok_hod_attack) { $eer=rand(0,1); if($eer==1 || $eer==0) { include('AI4/random.php'); } }
+if(!$shah && !$ok_hod_attack) {  include('AI4/shah_neiro.php');  }
 
 if($potok=='1') { $exxo[11]='Черные'; $exxo[1]=$zapas_exxo[1]; $exxo[2]=$zapas_exxo[2]; $seeed='белых'; $exxo[4]=$zapas_exxo[4]; $exxo[3]=$zapas_exxo[3];}
 if($potok=='2') { $exxo[11]='Белые'; $exxo[1]=$zapas_exxo[1]; $exxo[2]=$zapas_exxo[2];  $seeed='черных'; $exxo[4]=$zapas_exxo[4]; $exxo[3]=$zapas_exxo[3];  }
@@ -74,7 +74,7 @@ if($hod_two!='1000') {
 echo '<br>Расчёт хода <a href=#>для '.$seeed.'</a> с клетки '.$hod_one.' на клетку '.$hod_two;
                                 } //else echo '<br>Расчёт шаха от <a href=#>'.$seeed.'</a> не найден';
 
-if($hod_two!='1000') { $ugroza=$hod_two; echo '<br>Угроза на клетке '.$ugroza; }
+if($hod_two!='1000') { $ugroza=$hod_two; $ugroza_one=$hod_one; echo '<br>Угроза на клетке '.$ugroza; }
 
 unset($ok_hod_attack);
 unset($index);
@@ -86,14 +86,16 @@ $hod_two='1000';
 
 
 
-
 if($shah=='1') { $exxo[11]='Черные'; }
 if($shah=='2') { $exxo[11]='Белые'; }
-	  		
-if(!$shah) { $eer=rand(0,1); if($eer==1) { include('AI3/random.php'); } } 
-if(!$shah && !$ok_hod_attack) { $eet=rand(0,1); if($eet==1) { include('AI2/random.php'); } } 
-if(!$ok_hod_attack) { include('AI2/ataka_neiro_4_figure.php');  } 
- if(!$ok_hod_attack || $shah) { include('AI/coord.php'); } 
+
+if($exxo[11]=='Черные' && $exxo[4]=='Comp') { $okay_dobro='da'; }
+if($exxo[11]=='Белые' && $exxo[3]=='Comp') { $okay_dobro='da'; }
+		  		
+if($ugroza) { include('AI2/uhod_s_ugrozy.php');  } 
+if($okay_dobro=='da') { if(!$shah && !$ugroza) { $ddee=rand(0,1); if($ddee==1) { include('AI3/shah_neiro.php'); } } } 
+ if(!$ok_hod_attack && !$ugroza) { include('AI2/ataka_neiro_4_figure.php');  }  
+ if(!$ok_hod_attack && !$ugroza) { include('AI/coord.php'); } 
 include('AI/hody.php');
 			  }
 

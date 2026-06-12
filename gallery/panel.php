@@ -499,7 +499,12 @@ if($style_figure=='11') { $qqr='1'; }
 <li><a  href=#> Для Профессионалов </a></li>
 </ul>
 
-<li><a  href=../change_color.php>Вкл / Откл подсветку  [ <? echo $mmb; ?> ] </a></li>
+<li><a  href=../change_color.php>Вкл / Откл подсветку  [ <? echo $mmb; ?> ] </a>
+
+<ul>
+<li><a  href=#> Для Профессионалов </a></li>
+</ul>
+
 <li><a  href=../change_all.php>Вкл / Откл все новшества  [ <? echo $mmd; ?> ] </a></li>
 <li><a  href=../change_vhod.php>Вкл / Откл вход на сайт  [ <? echo $ddg; ?> ] </a>
 </ul>
@@ -600,7 +605,7 @@ if($style_figure=='11') { $qqr='1'; }
 <li><a target=_blank href=https://github.com/Entex-D/cyberchess> На сайте github</a>
 
 <ul>
-<li><a href=#>от 21.05.2026</a></li>
+<li><a href=#>от 06.06.2026</a></li>
 </ul>
 
 

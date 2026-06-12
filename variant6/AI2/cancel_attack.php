@@ -1291,7 +1291,7 @@ if($dona=='9') { echo 'Атака отменяется,защита пауком
 if($dona=='8') { echo 'Атака отменяется,защита гением<br>'; }
 if($dona=='7') { echo 'Атака отменяется,защита insider<br>'; }
 if($dona=='6') { echo 'Атака отменяется,защита королем<br>'; }
-if($dona) { $dobro_x='Net'; $hod_one='1000';  $hod_two='1000'; include('coord_zapas.php'); }
+if($dona && !$shah) { $dobro_x='Net'; $hod_one='1000';  $hod_two='1000'; include('coord_zapas.php'); }
 
 }
 

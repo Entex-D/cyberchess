@@ -393,6 +393,7 @@ function evaluateRookChainPHP52($startIndex, $board, $depth, $color) {
 
 
 
+
 /**
  * Универсальная функция глубокого анализа ходов Дельфина на 4 шага вперед
  * Совместима с PHP 5.2*/
@@ -795,6 +796,155 @@ function evaluateGhost9ChainPHP52($startIndex, $board, $depth, $color) {
 
 
 
+/**
+ * Универсальная функция глубокого анализа ходов пешек на 4 шага вперед
+ */
+function evaluatePawnChainPHP52($startIndex, $board, $depth, $color) {
+    // Ценность фигур
+    $pieceValues = array(
+        1 => 10, 11 => 10,   // Пешки
+        2 => 50, 12 => 50,   // Ладьи
+        3 => 30, 13 => 30,   // Кони
+        4 => 30, 14 => 30,   // Слоны
+        5 => 90, 15 => 90,   // Ферзи
+        6 => 1000, 16 => 1000, // Короли
+        7 => 40, 17 => 40,   // Стрелы
+        8 => 100, 18 => 100, // Драконы
+        9 => 60, 19 => 60    // Отшельники
+    );
+
+    if ($depth <= 0) {
+        return array('score' => 0, 'best_move' => null);
+    }
+
+    $bestScore = -1;
+    $bestMoveForThisStep = null;
+
+    $startX = $startIndex % 24;
+
+    // Конфигурация векторов движения и ID пешек для PHP 5.2
+    if ($color == 'Черные') {
+        $moveOffsets = array(24, 48);      // Обычные ходы вперед
+        $attackOffsets = array(23, 25);    // Диагональные атаки
+        $pawnId = 1;
+    } else { // Белые
+        $moveOffsets = array(-24, -48);    // Обычные ходы вперед
+        $attackOffsets = array(-23, -25);  // Диагональные атаки
+        $pawnId = 11;
+    }
+
+    // --- БЛОК 1: АНАЛИЗ ТИХИХ ХОДОВ (СТРОГО ВПЕРЕД) ---
+    $isFirstStepBlocked = false;
+    foreach ($moveOffsets as $offset) {
+        // Если клетка на 1 шаг вперед занята, то прыжок на 2 шага невозможен
+        if ($isFirstStepBlocked && abs($offset) == 48) {
+            continue;
+        }
+
+        $targetIndex = $startIndex + $offset;
+
+        // Проверка границ игрового поля
+        if ($targetIndex < 54 || $targetIndex >= 229) {
+            if (abs($offset) == 24) { $isFirstStepBlocked = true; }
+            continue;
+        }
+
+        // Валидация вертикали (X координата не должна меняться)
+        $targetX = $targetIndex % 24;
+        if ($targetX != $startX) {
+            if (abs($offset) == 24) { $isFirstStepBlocked = true; }
+            continue;
+        }
+
+        // Пешка может ходить вперед ТОЛЬКО на пустую клетку
+        $targetPiece = isset($board[$targetIndex]) ? $board[$targetIndex] : 0;
+        if ($targetPiece != 0) {
+            if (abs($offset) == 24) { $isFirstStepBlocked = true; }
+            continue;
+        }
+
+        // Симуляция тихого хода (0 очков за взятие)
+        $tempBoard = $board;
+        $tempBoard[$startIndex] = 0;
+        $tempBoard[$targetIndex] = $pawnId;
+
+        // Рекурсивный вызов
+        $nextSteps = evaluatePawnChainPHP52($targetIndex, $tempBoard, $depth - 1, $color);
+        $totalScore = 0 + $nextSteps['score'];
+
+        if ($totalScore > $bestScore) {
+            $bestScore = $totalScore;
+            $bestMoveForThisStep = $targetIndex;
+        }
+    }
+
+    // --- БЛОК 2: АНАЛИЗАТОР АТАК (ПО ДИАГОНАЛИ) ---
+    foreach ($attackOffsets as $offset) {
+        $targetIndex = $startIndex + $offset;
+
+        // Проверка границ игрового поля
+        if ($targetIndex < 54 || $targetIndex >= 229) {
+            continue;
+        }
+
+        // Валидация диагонали (смещение по X должно быть ровно 1 клетка)
+        $targetX = $targetIndex % 24;
+        if (abs($targetX - $startX) != 1) {
+            continue;
+        }
+
+        $targetPiece = isset($board[$targetIndex]) ? $board[$targetIndex] : 0;
+        $currentScore = 0;
+        $isValidAttack = false;
+
+        // Пешка бьет ТОЛЬКО если на клетке стоит враг
+        if ($color == 'Черные') {
+            if ($targetPiece > 10 && $targetPiece < 20) { // Атака белых
+                $currentScore += $pieceValues[$targetPiece];
+                $isValidAttack = true;
+            }
+        } else { // Белые
+            if ($targetPiece > 0 && $targetPiece < 10) { // Атака черных
+                $currentScore += $pieceValues[$targetPiece];
+                $isValidAttack = true;
+            }
+        }
+
+        if (!$isValidAttack) {
+            continue;
+        }
+
+        // Симуляция атаки
+        $tempBoard = $board;
+        $tempBoard[$startIndex] = 0;
+        $tempBoard[$targetIndex] = $pawnId;
+
+        // Рекурсивный вызов
+        $nextSteps = evaluatePawnChainPHP52($targetIndex, $tempBoard, $depth - 1, $color);
+        $totalScore = $currentScore + $nextSteps['score'];
+
+        if ($totalScore > $bestScore) {
+            $bestScore = $totalScore;
+            $bestMoveForThisStep = $targetIndex;
+        }
+    }
+
+    return array('score' => $bestScore, 'best_move' => $bestMoveForThisStep);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+unset($index_to);
 
 // --- КОНЕЦ: ФУНКЦИИ АНАЛИЗА ХОДОВ ---
 
@@ -805,10 +955,10 @@ function evaluateGhost9ChainPHP52($startIndex, $board, $depth, $color) {
 for($rer = 53; $rer < 150; $rer++) {
     $tt = rand(53, 233);
     $index = $tt;
-    $index_to = null;
+    //$index_to = null;
 
     // АТАКА ЧЕРНОГО КОНЯ (ID: 3)
-    if(isset($sh[$index]) && $sh[$index] == 3 && isset($exxo[4]) && $exxo[4] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Черные') {
+    if(isset($sh[$index]) && $sh[$index] == 3 && isset($exxo[4]) && $exxo[4] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Черные' && !$index_to) {
         $analysis = evaluateKnightChainPHP52($index, $sh, $dept, 'Черные');
         if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
@@ -822,7 +972,7 @@ for($rer = 53; $rer < 150; $rer++) {
     }
 
     // АТАКА БЕЛОГО КОНЯ (ID: 13)
-    if(isset($sh[$index]) && $sh[$index] == 13 && isset($exxo[3]) && $exxo[3] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Белые') {
+    if(isset($sh[$index]) && $sh[$index] == 13 && isset($exxo[3]) && $exxo[3] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Белые' && !$index_to && !$index_to) {
         $analysis = evaluateKnightChainPHP52($index, $sh, $dept, 'Белые');
         if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
@@ -836,7 +986,7 @@ for($rer = 53; $rer < 150; $rer++) {
     }
 
     // АТАКА ЧЕРНОГО ФЕРЗЯ (ID: 5)
-    if(isset($sh[$index]) && $sh[$index] == 5 && isset($exxo[4]) && $exxo[4] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Черные') {
+    if(isset($sh[$index]) && $sh[$index] == 5 && isset($exxo[4]) && $exxo[4] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Черные' && !$index_to) {
         $analysis = evaluateQueenChainPHP52($index, $sh, $dept, 'Черные');
         if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
@@ -850,7 +1000,7 @@ for($rer = 53; $rer < 150; $rer++) {
     }
 
     // АТАКА БЕЛОГО ФЕРЗЯ (ID: 15)
-    if(isset($sh[$index]) && $sh[$index] == 15 && isset($exxo[3]) && $exxo[3] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Белые') {
+    if(isset($sh[$index]) && $sh[$index] == 15 && isset($exxo[3]) && $exxo[3] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Белые' && !$index_to && !$index_to) {
         $analysis = evaluateQueenChainPHP52($index, $sh, $dept, 'Белые');
         if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
@@ -864,7 +1014,7 @@ for($rer = 53; $rer < 150; $rer++) {
     }
 
     // АТАКА ЧЕРНОГО СЛОНА (ID: 3)
-    if(isset($sh[$index]) && $sh[$index] == 3 && isset($exxo[4]) && $exxo[4] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Черные') {
+    if(isset($sh[$index]) && $sh[$index] == 3 && isset($exxo[4]) && $exxo[4] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Черные' && !$index_to) {
         $analysis = evaluateBishopChainPHP52($index, $sh, $dept, 'Черные');
         if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
@@ -878,7 +1028,7 @@ for($rer = 53; $rer < 150; $rer++) {
     }
 
     // АТАКА БЕЛОГО СЛОНА (ID: 13)
-    if(isset($sh[$index]) && $sh[$index] == 13 && isset($exxo[3]) && $exxo[3] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Белые') {
+    if(isset($sh[$index]) && $sh[$index] == 13 && isset($exxo[3]) && $exxo[3] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Белые' && !$index_to && !$index_to) {
         $analysis = evaluateBishopChainPHP52($index, $sh, $dept, 'Белые');
         if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
@@ -892,7 +1042,7 @@ for($rer = 53; $rer < 150; $rer++) {
     }
 
     // АТАКА ЧЕРНОЙ ЛАДЬИ (ID: 2)
-    if(isset($sh[$index]) && $sh[$index] == 2 && isset($exxo[4]) && $exxo[4] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Черные') {
+    if(isset($sh[$index]) && $sh[$index] == 2 && isset($exxo[4]) && $exxo[4] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Черные' && !$index_to) {
         $analysis = evaluateRookChainPHP52($index, $sh, $dept, 'Черные');
         if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
@@ -906,7 +1056,7 @@ for($rer = 53; $rer < 150; $rer++) {
     }
 
     // АТАКА БЕЛОЙ ЛАДЬИ (ID: 12)
-    if(isset($sh[$index]) && $sh[$index] == 12 && isset($exxo[3]) && $exxo[3] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Белые') {
+    if(isset($sh[$index]) && $sh[$index] == 12 && isset($exxo[3]) && $exxo[3] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Белые' && !$index_to && !$index_to) {
         $analysis = evaluateRookChainPHP52($index, $sh, $dept, 'Белые');
         if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
@@ -928,12 +1078,12 @@ for($rer = 53; $rer < 150; $rer++) {
 
 
 // 1. АТАКА/ХОД ЧЕРНОГО ДЕЛЬФИНА
-    if($sh[$index] == 7 && $exxo[4] == 'Comp' && $exxo[11] == 'Черные') { 
+    if($sh[$index] == 7 && $exxo[4] == 'Comp' && $exxo[11] == 'Черные' && !$index_to) { 
         
         $analysis = evaluateGhost7ChainPHP52($index, $sh, $dept, 'Черные');
         
         // Исправлено условие: ходим, даже если score == 0 (нет немедленной жертвы, просто маневр)
-        if($analysis['best_move'] !== null && $analysis['score'] >= 0) {
+        if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
             echo 'Дельфин (Ч) перемещается/атакует клетку: ' . $index_to . ' (Прогноз ценности: ' . $analysis['score'] . ')<br>';
         }
@@ -946,11 +1096,11 @@ for($rer = 53; $rer < 150; $rer++) {
     }  
 
     // 2. АТАКА/ХОД БЕЛОГО ДЕЛЬФИНА
-    if($sh[$index] == 17 && $exxo[3] == 'Comp' && $exxo[11] == 'Белые') { 
+    if($sh[$index] == 17 && $exxo[3] == 'Comp' && $exxo[11] == 'Белые' && !$index_to && !$index_to) { 
         
         $analysis = evaluateGhost7ChainPHP52($index, $sh, $dept, 'Белые');
         
-        if($analysis['best_move'] !== null && $analysis['score'] >= 0) {
+        if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
             echo 'Дельфин (Б) перемещается/атакует клетку: ' . $index_to . ' (Прогноз ценности: ' . $analysis['score'] . ')<br>';
         }
@@ -972,12 +1122,12 @@ for($rer = 53; $rer < 150; $rer++) {
 
 
 // 1. АТАКА/ХОД ЧЕРНОЙ ЛЕГЕНДЫ
-    if($sh[$index] == 8 && $exxo[4] == 'Comp' && $exxo[11] == 'Черные') { 
+    if($sh[$index] == 8 && $exxo[4] == 'Comp' && $exxo[11] == 'Черные' && !$index_to) { 
         
         $analysis = evaluateGhost8ChainPHP52($index, $sh, $dept, 'Черные');
         
         // Исправлено условие: ходим, даже если score == 0 (нет немедленной жертвы, просто маневр)
-        if($analysis['best_move'] !== null && $analysis['score'] >= 0) {
+        if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
             echo 'Легенда (Ч) перемещается/атакует клетку: ' . $index_to . ' (Прогноз ценности: ' . $analysis['score'] . ')<br>';
         }
@@ -990,11 +1140,11 @@ for($rer = 53; $rer < 150; $rer++) {
     }  
 
     // 2. АТАКА/ХОД БЕЛОЙ ЛЕГЕНДЫ
-    if($sh[$index] == 18 && $exxo[3] == 'Comp' && $exxo[11] == 'Белые') { 
+    if($sh[$index] == 18 && $exxo[3] == 'Comp' && $exxo[11] == 'Белые' && !$index_to) { 
         
         $analysis = evaluateGhost8ChainPHP52($index, $sh, $dept, 'Белые');
         
-        if($analysis['best_move'] !== null && $analysis['score'] >= 0) {
+        if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
             echo 'Легенда (Б) перемещается/атакует клетку: ' . $index_to . ' (Прогноз ценности: ' . $analysis['score'] . ')<br>';
         }
@@ -1016,12 +1166,12 @@ for($rer = 53; $rer < 150; $rer++) {
 
 
 // 1. АТАКА/ХОД ЧЕРНОГО ЁЖИКА
-    if($sh[$index] == 9 && $exxo[4] == 'Comp' && $exxo[11] == 'Черные') { 
+    if($sh[$index] == 9 && $exxo[4] == 'Comp' && $exxo[11] == 'Черные' && !$index_to) { 
         
         $analysis = evaluateGhost9ChainPHP52($index, $sh, $dept, 'Черные');
         
         // Исправлено условие: ходим, даже если score == 0 (нет немедленной жертвы, просто маневр)
-        if($analysis['best_move'] !== null && $analysis['score'] >= 0) {
+        if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
             echo 'Ёжик (Ч) перемещается/атакует клетку: ' . $index_to . ' (Прогноз ценности: ' . $analysis['score'] . ')<br>';
         }
@@ -1034,11 +1184,11 @@ for($rer = 53; $rer < 150; $rer++) {
     }  
 
     // 2. АТАКА/ХОД БЕЛОГО ЁЖИКА
-    if($sh[$index] == 19 && $exxo[3] == 'Comp' && $exxo[11] == 'Белые') { 
+    if($sh[$index] == 19 && $exxo[3] == 'Comp' && $exxo[11] == 'Белые' && !$index_to && !$index_to) { 
         
         $analysis = evaluateGhost9ChainPHP52($index, $sh, $dept, 'Белые');
         
-        if($analysis['best_move'] !== null && $analysis['score'] >= 0) {
+        if($analysis['best_move'] !== null && $analysis['score'] > 0) {
             $index_to = $analysis['best_move'];
             echo 'Ёжик (Б) перемещается/атакует клетку: ' . $index_to . ' (Прогноз ценности: ' . $analysis['score'] . ')<br>';
         }
@@ -1050,6 +1200,53 @@ for($rer = 53; $rer < 150; $rer++) {
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // АТАКА ЧЕРНОЙ ПЕШКИ (ID: 1)
+    if(isset($sh[$index]) && $sh[$index] == 1 && isset($exxo[4]) && $exxo[4] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Черные' && !$index_to) {
+        $analysis = evaluatePawnChainPHP52($index, $sh, $dept, 'Черные');
+        // Ставим >= 0, так как лучший ход пешки может быть просто продвижением вперед без взятия
+        if($analysis['best_move'] !== null && $analysis['score'] >= 0) {
+            $index_to = $analysis['best_move'];
+            echo 'Выбрана стратегическая цель для черной пешки: ' . $index_to . ' (Прогноз ценности на 4 хода: ' . $analysis['score'] . ')<br>';
+        }
+        if($index_to) {
+            $hod_one = $index;
+            $hod_two = $index_to;
+            break;
+        }
+    }
+
+    // АТАКА БЕЛОЙ ПЕШКИ (ID: 11)
+    if(isset($sh[$index]) && $sh[$index] == 11 && isset($exxo[3]) && $exxo[3] == 'Comp' && isset($exxo[11]) && $exxo[11] == 'Белые' && !$index_to) {
+        $analysis = evaluatePawnChainPHP52($index, $sh, $dept, 'Белые');
+        if($analysis['best_move'] !== null && $analysis['score'] >= 0) {
+            $index_to = $analysis['best_move'];
+            echo 'Выбрана стратегическая цель для белой пешки: ' . $index_to . ' (Прогноз ценности на 4 хода: ' . $analysis['score'] . ')<br>';
+        }
+        if($index_to) {
+            $hod_one = $index;
+            $hod_two = $index_to;
+            break;
+        }
+    }
 
 
 
@@ -1083,7 +1280,7 @@ if($q1>197 && $q1<210) { $b11=1; }
 if($q1>221 && $q1<234) { $b11=1; }
 
 if($b11==0 && $hod_two<1000) { $hod_one=1000; $hod_two=1000; } else
-if($b1==1 && $hod_two<1000) { $ok_hod_attack=$hod_two; $index=$hod_one;  include('cancel_attack.php');   }
+if($b1==1 && $hod_two<1000) { $ok_hod_attack=$hod_two; $index=$hod_one; if($analysis['score']<1200) { include('cancel_attack.php'); } }
 
 unset($index);
 unset($index_to);

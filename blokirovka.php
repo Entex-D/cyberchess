@@ -48,8 +48,8 @@ if($qq==2) {
 <? include('chat_mobile_comp.php'); ?>
 
 <? 
-if($user=='pc') { $razmer='72%'; }
-if($user=='mobile') { $razmer='86%'; }
+if($user=='pc') { $razmer_x='72%'; }
+if($user=='mobile') { $razmer_x='86%'; }
 
  ?>
 
@@ -59,7 +59,7 @@ if($user=='mobile') { $razmer='86%'; }
 
 <? include('shapka.php'); ?>
 
-<table width=90% height=<? echo $razmer; ?> ><tr><td class=td_center><center>
+<table width=90% height=<? echo $razmer_x; ?> ><tr><td class=td_center><center>
 
 <img src=../model/logo_color<? echo $style_run; ?>.jpg width=500 />
 

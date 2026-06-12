@@ -24,7 +24,8 @@ $desa_parol='0190'; //пароль для админки
 $shirina='92%'; //ширина центральной части,где расположена доска,пробуйте указать ширину 66%
 $random_index='no'; //поставить 'no' или 'yes' ,чтобы в каждой партии с игроками была игра с рандомом вертикалей и рандомом фигур,по умолчанию рандомы отключены
 if(!$doski_v_archive) { $doski_v_archive='20'; } //количество вывода досок в архиве
-$dept=2; // глубина анализа ходов у ИИ,при значении 4 сервер перегружается
+$dept=3; // глубина анализа ходов у ИИ,при значении 4 сервер перегружается
+$razmer=102400/1024*2; // в папке resize_img это размер обрезания картинок 102400 это 100 килобайт
 ?>
 
 <? if(!isset($_COOKIE['style_run'])) { 
@@ -233,7 +234,7 @@ if($p==0) { $style_figure='4'; setcookie ("style_figure", $style_figure, time() 
 
  if(!isset($_COOKIE['dobro_color'])) { 
 
- $dobro_color='11'; setcookie ("dobro_color", $dobro_color, time() + 3600);
+ $dobro_color='6'; setcookie ("dobro_color", $dobro_color, time() + 3600);
 
                                            }
 
